@@ -1,12 +1,10 @@
 body {
   width: 300px;
   font-family: Arial, sans-serif;
-  padding: 10px;
 }
 
 h1 {
-  font-size: 18px;
-  margin-bottom: 10px;
+  text-align: center;
 }
 
 ul {
@@ -15,13 +13,26 @@ ul {
 }
 
 li {
+  display: flex;
+  align-items: center;
   margin-bottom: 10px;
-  padding: 5px;
-  background-color: #f0f0f0;
-  border-radius: 5px;
 }
 
-button {
-  margin-left: 5px;
+.drag-handle {
+  cursor: move;
+  margin-right: 10px;
+}
+
+a {
+  flex-grow: 1;
+  text-decoration: none;
+  color: #0077b5;
+}
+
+.mark-read {
+  background: none;
+  border: none;
   cursor: pointer;
+  font-size: 18px;
+  color: green;
 }

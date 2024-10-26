@@ -1,12 +1,25 @@
 {
   "manifest_version": 3,
-  "name": "LinkedIn Article Todo List",
+  "name": "LinkedIn Article Saver",
   "version": "1.0",
-  "description": "Create a todo list of LinkedIn articles to read later",
+  "description": "Save and manage LinkedIn articles",
   "permissions": [
     "storage",
     "alarms",
     "notifications"
+  ],
+  "host_permissions": [
+    "https://www.linkedin.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
   ],
   "action": {
     "default_popup": "popup.html",
@@ -15,16 +28,6 @@
       "64": "images/icon64.png",
       "128": "images/icon128.png"
     }
-  },
-  "content_scripts": [
-    {
-      "matches": ["*://www.linkedin.com/*"],
-      "js": ["content.js"],
-      "css": ["content.css"]
-    }
-  ],
-  "background": {
-    "service_worker": "background.js"
   },
   "icons": {
     "16": "images/icon16.png",
